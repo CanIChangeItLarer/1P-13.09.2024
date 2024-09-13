@@ -1,4 +1,5 @@
-﻿using GhinImp;
+﻿//git remote add origin https://github.com/CanIChangeItLarer/1P-13.09.2024.gitusing GhinImp;
+using GhinImp;
 
 var characterGroup = new CharacterGroup();
 
@@ -17,20 +18,25 @@ foreach (var character in powerfulCharacters)
     Console.WriteLine($"Character: {character.Name}, Attack Power: {character.AttackPower}");
 }
 
-var highAttackers = characterGroup.FilterCharacters(c => attackCalculator.CalculateAverageAttack(c) > 80);
+Console.WriteLine();
 
-foreach (var character in highAttackers)
-{
-    Console.WriteLine(
-        $"Character: {character.Name}, Average Attack: {attackCalculator.CalculateAverageAttack(character):F2}");
-}
+// var highAttackers = characterGroup.FilterCharacters(c => attackCalculator.CalculateAverageAttack(c) > 80);
+//
+// foreach (var character in highAttackers)
+// {
+//     Console.WriteLine(
+//         $"Character: {character.Name}, Average Attack: {attackCalculator.CalculateAverageAttack(character):F2}");
+// }
 
-var sortedCharacters = characterGroup.SortCharactersByName;
+Console.WriteLine("Sorted Characters by Name:");
+var sortedCharacters = characterGroup.SortCharactersByName; //ссылка на функцию
 
-foreach (var character in sortedCharacters)
+foreach (var character in sortedCharacters()) // () вызов 
 {
     Console.WriteLine($"Character: {character.Name}");
 }
+
+Console.WriteLine();
 
 Console.WriteLine($"Number of Pyro characters: {characterGroup.CountCharactersByElement("Pyro")}");
 
